@@ -1,0 +1,324 @@
+<?php
+// Juntar os dados por código IBGE e ano
+require 'linkdb.php';
+
+$municipios = $pdo -> prepare("
+SELECT 
+    d.ano,
+    d.municipio,
+    d.estado,
+    d.area_km,
+    SUM(r.valor) as total_repasses
+FROM desflorestamento d
+LEFT JOIN repasses_municipais r ON d.geocode_ibge = r.codigo_ibge AND d.ano = r.ano
+WHERE r.ano > 2013
+GROUP BY d.ano, d.municipio
+ORDER BY d.ano
+");
+$municipios -> execute();
+$result = $municipios -> fetchAll(PDO::FETCH_ASSOC);
+
+
+$nomes_rell = $pdo -> prepare("
+SELECT DISTINCT 
+municipio AS name,
+geocode_ibge AS id,
+estado
+FROM desflorestamento
+");
+$nomes_rell -> execute();
+$municipalities = $nomes_rell -> fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
+// Simulação de dados do banco (substitua pela sua conexão real)
+
+
+foreach ($municipalities as $key => $municipality) {
+    if (file_exists("fotos/{$municipality['id']}.jpg")) {
+        $municipalities[$key]['image'] = "fotos_otimizadas/{$municipality['id']}.webp";
+    } else {
+        $municipalities[$key]['image'] = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Municípios - Pará</title>
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-card: #252525;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent: #ffc107;
+            --accent-hover: #ffd54f;
+            --border: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .search-button {
+            padding: 12px 25px;
+            background-color: var(--accent);
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .municipalities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .municipality-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .municipality-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .municipality-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .municipality-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .municipality-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .municipality-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .view-report-btn {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            background-color: var(--accent);
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .mapa-antigo{
+            display: block;
+            width: 15%;
+            margin: 0 auto;
+            padding: 12px 20px;
+            background-color: var(--accent);
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-report-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--text-secondary);
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .municipalities-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .municipalities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 15px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Municípios do Pará</h1>
+            <p class="subtitle">Visualize dados e relatórios dos 144 municípios paraenses</p>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" class="search-input" placeholder="Digite o nome do município...">
+                    <button class="search-button" onclick="filterMunicipalities()">Buscar</button>
+                    <a class="mapa-antigo" href="mapa_antigo.html">Mapa</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="municipalities-grid" id="municipalities-container">
+                <?php foreach ($municipalities as $municipality): ?>
+                    <div class="municipality-card" data-name="<?php echo strtolower($municipality['name']); ?>">
+                        <img src="<?php echo $municipality['image']; ?>" alt="<?php echo $municipality['name']; ?>" class="municipality-image">
+                        <div class="municipality-info">
+                            <h3 class="municipality-name"><?php echo $municipality['name']; ?></h3>
+                            <a href="relatorio.php?id=<?php echo $municipality['id']; ?>" class="view-report-btn">Visualizar Relatório</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </main>
+
+        <footer>
+            <p>Sistema de Monitoramento - Pará &copy; quietbyte 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Função para filtrar municípios por nome
+        function filterMunicipalities() {
+            const searchInput = document.getElementById('search-input');
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.municipality-card');
+            
+            cards.forEach(card => {
+                const municipalityName = card.getAttribute('data-name');
+                
+                if (municipalityName.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Permitir busca pressionando Enter
+        document.getElementById('search-input').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                filterMunicipalities();
+            }
+        });
+    </script>
+</body>
+</html>
