@@ -319,7 +319,7 @@
         <div class="stats-grid-2x2">
             <div class="stat-card total-repasse">
                 <div class="stat-label">Total de Repasses (ICMS Verde)</div>
-                <div class="stat-value">R$ <?php echo number_format($total_repasse, 2, ',', '.'); ?></div>
+                <div class="stat-value" id="totalrepasses">Automação</div>
                 <div class="stat-desc">Valor acumulado</div>
             </div>
 
@@ -331,13 +331,13 @@
 
             <div class="stat-card correlacao-pearson">
                 <div class="stat-label">Correlação de Pearson</div>
-                <div class="stat-value"><?php echo number_format($correlacao_pearson, 4, ',', '.'); ?></div>
+                <div class="stat-value" id="pearson">Automação</div>
                 <div class="stat-desc">Relação linear</div>
             </div>
 
             <div class="stat-card correlacao-spearman">
                 <div class="stat-label">Correlação de Spearman</div>
-                <div class="stat-value"><?php echo number_format($correlacao_spearman, 4, ',', '.'); ?></div>
+                <div class="stat-value" id="spearman">Automação</div>
                 <div class="stat-desc">Relação monotônica</div>
             </div>
         </div>
