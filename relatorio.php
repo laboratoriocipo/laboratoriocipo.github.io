@@ -394,9 +394,16 @@
 
 <!-- Incluir Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="dados.js"></script>
 <script>
-// Preparar dados para os gráficos
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+
+
+
+
+
 const anos = <?php echo json_encode(array_keys($dados_anuais)); ?>;
 const repassesAnuais = <?php echo json_encode(array_column($dados_anuais, 'repasse_anual')); ?>;
 const desflorestamentoAnual = <?php echo json_encode(array_column($dados_anuais, 'desflorestamento_anual')); ?>;
