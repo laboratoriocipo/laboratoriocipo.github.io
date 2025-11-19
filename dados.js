@@ -27651,3 +27651,582 @@ window.Desflorestamento = [
    "state": "Para"
  }
 ];
+
+window.Nomes = [
+ {
+   "codigo": 1500107,
+   "nome": "Abaetetuba"
+ },
+ {
+   "codigo": 1500131,
+   "nome": "Abel Figueiredo"
+ },
+ {
+   "codigo": 1500206,
+   "nome": "Acara"
+ },
+ {
+   "codigo": 1500305,
+   "nome": "Afua"
+ },
+ {
+   "codigo": 1500347,
+   "nome": "Agua Azul do Norte"
+ },
+ {
+   "codigo": 1500404,
+   "nome": "Alenquer"
+ },
+ {
+   "codigo": 1500503,
+   "nome": "Almeirim"
+ },
+ {
+   "codigo": 1500602,
+   "nome": "Altamira"
+ },
+ {
+   "codigo": 1500701,
+   "nome": "Anajas"
+ },
+ {
+   "codigo": 1500800,
+   "nome": "Ananindeua"
+ },
+ {
+   "codigo": 1500859,
+   "nome": "Anapu"
+ },
+ {
+   "codigo": 1500909,
+   "nome": "Augusto Correa"
+ },
+ {
+   "codigo": 1500958,
+   "nome": "Aurora do Para"
+ },
+ {
+   "codigo": 1501006,
+   "nome": "Aveiro"
+ },
+ {
+   "codigo": 1501105,
+   "nome": "Bagre"
+ },
+ {
+   "codigo": 1501204,
+   "nome": "Baiao"
+ },
+ {
+   "codigo": 1501253,
+   "nome": "Bannach"
+ },
+ {
+   "codigo": 1501303,
+   "nome": "Barcarena"
+ },
+ {
+   "codigo": 1501402,
+   "nome": "Belem"
+ },
+ {
+   "codigo": 1501451,
+   "nome": "Belterra"
+ },
+ {
+   "codigo": 1501501,
+   "nome": "Benevides"
+ },
+ {
+   "codigo": 1501576,
+   "nome": "Bom Jesus do Tocantins"
+ },
+ {
+   "codigo": 1501600,
+   "nome": "Bonito"
+ },
+ {
+   "codigo": 1501709,
+   "nome": "Braganca"
+ },
+ {
+   "codigo": 1501725,
+   "nome": "Brasil Novo"
+ },
+ {
+   "codigo": 1501758,
+   "nome": "Brejo Grande do Araguaia"
+ },
+ {
+   "codigo": 1501782,
+   "nome": "Breu Branco"
+ },
+ {
+   "codigo": 1501808,
+   "nome": "Breves"
+ },
+ {
+   "codigo": 1501907,
+   "nome": "Bujaru"
+ },
+ {
+   "codigo": 1502004,
+   "nome": "Cachoeira do Arari"
+ },
+ {
+   "codigo": 1501956,
+   "nome": "Cachoeira do Piria"
+ },
+ {
+   "codigo": 1502103,
+   "nome": "Cameta"
+ },
+ {
+   "codigo": 1502152,
+   "nome": "Canaa dos Carajas"
+ },
+ {
+   "codigo": 1502202,
+   "nome": "Capanema"
+ },
+ {
+   "codigo": 1502301,
+   "nome": "Capitao Poco"
+ },
+ {
+   "codigo": 1502400,
+   "nome": "Castanhal"
+ },
+ {
+   "codigo": 1502509,
+   "nome": "Chaves"
+ },
+ {
+   "codigo": 1502608,
+   "nome": "Colares"
+ },
+ {
+   "codigo": 1502707,
+   "nome": "Conceicao do Araguaia"
+ },
+ {
+   "codigo": 1502756,
+   "nome": "Concordia do Para"
+ },
+ {
+   "codigo": 1502764,
+   "nome": "Cumaru do Norte"
+ },
+ {
+   "codigo": 1502772,
+   "nome": "Curionopolis"
+ },
+ {
+   "codigo": 1502806,
+   "nome": "Curralinho"
+ },
+ {
+   "codigo": 1502855,
+   "nome": "Curua"
+ },
+ {
+   "codigo": 1502905,
+   "nome": "Curuca"
+ },
+ {
+   "codigo": 1502939,
+   "nome": "Dom Eliseu"
+ },
+ {
+   "codigo": 1502954,
+   "nome": "Eldorado do Carajas"
+ },
+ {
+   "codigo": 1503002,
+   "nome": "Faro"
+ },
+ {
+   "codigo": 1503044,
+   "nome": "Floresta do Araguaia"
+ },
+ {
+   "codigo": 1503077,
+   "nome": "Garrafao do Norte"
+ },
+ {
+   "codigo": 1503093,
+   "nome": "Goianesia do Para"
+ },
+ {
+   "codigo": 1503101,
+   "nome": "Gurupa"
+ },
+ {
+   "codigo": 1503200,
+   "nome": "Igarape-Acu"
+ },
+ {
+   "codigo": 1503309,
+   "nome": "Igarape-Miri"
+ },
+ {
+   "codigo": 1503408,
+   "nome": "Inhangapi"
+ },
+ {
+   "codigo": 1503457,
+   "nome": "Ipixuna do Para"
+ },
+ {
+   "codigo": 1503507,
+   "nome": "Irituia"
+ },
+ {
+   "codigo": 1503606,
+   "nome": "Itaituba"
+ },
+ {
+   "codigo": 1503705,
+   "nome": "Itupiranga"
+ },
+ {
+   "codigo": 1503754,
+   "nome": "Jacareacanga"
+ },
+ {
+   "codigo": 1503804,
+   "nome": "Jacunda"
+ },
+ {
+   "codigo": 1503903,
+   "nome": "Juruti"
+ },
+ {
+   "codigo": 1504000,
+   "nome": "Limoeiro do Ajuru"
+ },
+ {
+   "codigo": 1504059,
+   "nome": "Mae do Rio"
+ },
+ {
+   "codigo": 1504109,
+   "nome": "Magalhaes Barata"
+ },
+ {
+   "codigo": 1504208,
+   "nome": "Maraba"
+ },
+ {
+   "codigo": 1504307,
+   "nome": "Maracana"
+ },
+ {
+   "codigo": 1504406,
+   "nome": "Marapanim"
+ },
+ {
+   "codigo": 1504422,
+   "nome": "Marituba"
+ },
+ {
+   "codigo": 1504455,
+   "nome": "Medicilandia"
+ },
+ {
+   "codigo": 1504505,
+   "nome": "Melgaco"
+ },
+ {
+   "codigo": 1504604,
+   "nome": "Mocajuba"
+ },
+ {
+   "codigo": 1504703,
+   "nome": "Moju"
+ },
+ {
+   "codigo": 1504752,
+   "nome": "Mojui dos Campos"
+ },
+ {
+   "codigo": 1504802,
+   "nome": "Monte Alegre"
+ },
+ {
+   "codigo": 1504901,
+   "nome": "Muana"
+ },
+ {
+   "codigo": 1504950,
+   "nome": "Nova Esperanca do Piria"
+ },
+ {
+   "codigo": 1504976,
+   "nome": "Nova Ipixuna"
+ },
+ {
+   "codigo": 1505007,
+   "nome": "Nova Timboteua"
+ },
+ {
+   "codigo": 1505031,
+   "nome": "Novo Progresso"
+ },
+ {
+   "codigo": 1505064,
+   "nome": "Novo Repartimento"
+ },
+ {
+   "codigo": 1505106,
+   "nome": "Obidos"
+ },
+ {
+   "codigo": 1505205,
+   "nome": "Oeiras do Para"
+ },
+ {
+   "codigo": 1505304,
+   "nome": "Oriximina"
+ },
+ {
+   "codigo": 1505403,
+   "nome": "Ourem"
+ },
+ {
+   "codigo": 1505437,
+   "nome": "Ourilandia do Norte"
+ },
+ {
+   "codigo": 1505486,
+   "nome": "Pacaja"
+ },
+ {
+   "codigo": 1505494,
+   "nome": "Palestina do Para"
+ },
+ {
+   "codigo": 1505502,
+   "nome": "Paragominas"
+ },
+ {
+   "codigo": 1505536,
+   "nome": "Parauapebas"
+ },
+ {
+   "codigo": 1505551,
+   "nome": "Pau D'Arco"
+ },
+ {
+   "codigo": 1505601,
+   "nome": "Peixe-Boi"
+ },
+ {
+   "codigo": 1505635,
+   "nome": "Picarra"
+ },
+ {
+   "codigo": 1505650,
+   "nome": "Placas"
+ },
+ {
+   "codigo": 1505700,
+   "nome": "Ponta de Pedras"
+ },
+ {
+   "codigo": 1505809,
+   "nome": "Portel"
+ },
+ {
+   "codigo": 1505908,
+   "nome": "Porto de Moz"
+ },
+ {
+   "codigo": 1506005,
+   "nome": "Prainha"
+ },
+ {
+   "codigo": 1506104,
+   "nome": "Primavera"
+ },
+ {
+   "codigo": 1506112,
+   "nome": "Quatipuru"
+ },
+ {
+   "codigo": 1506138,
+   "nome": "Redencao"
+ },
+ {
+   "codigo": 1506161,
+   "nome": "Rio Maria"
+ },
+ {
+   "codigo": 1506187,
+   "nome": "Rondon do Para"
+ },
+ {
+   "codigo": 1506195,
+   "nome": "Ruropolis"
+ },
+ {
+   "codigo": 1506203,
+   "nome": "Salinopolis"
+ },
+ {
+   "codigo": 1506302,
+   "nome": "Salvaterra"
+ },
+ {
+   "codigo": 1506351,
+   "nome": "Santa Barbara do Para"
+ },
+ {
+   "codigo": 1506401,
+   "nome": "Santa Cruz do Arari"
+ },
+ {
+   "codigo": 1506500,
+   "nome": "Santa Izabel do Para"
+ },
+ {
+   "codigo": 1506559,
+   "nome": "Santa Luzia do Para"
+ },
+ {
+   "codigo": 1506583,
+   "nome": "Santa Maria das Barreiras"
+ },
+ {
+   "codigo": 1506609,
+   "nome": "Santa Maria do Para"
+ },
+ {
+   "codigo": 1506708,
+   "nome": "Santana do Araguaia"
+ },
+ {
+   "codigo": 1506807,
+   "nome": "Santarem"
+ },
+ {
+   "codigo": 1506906,
+   "nome": "Santarem Novo"
+ },
+ {
+   "codigo": 1507003,
+   "nome": "Santo Antonio do Taua"
+ },
+ {
+   "codigo": 1507102,
+   "nome": "Sao Caetano de Odivelas"
+ },
+ {
+   "codigo": 1507151,
+   "nome": "Sao Domingos do Araguaia"
+ },
+ {
+   "codigo": 1507201,
+   "nome": "Sao Domingos do Capim"
+ },
+ {
+   "codigo": 1507300,
+   "nome": "Sao Felix do Xingu"
+ },
+ {
+   "codigo": 1507409,
+   "nome": "Sao Francisco do Para"
+ },
+ {
+   "codigo": 1507458,
+   "nome": "Sao Geraldo do Araguaia"
+ },
+ {
+   "codigo": 1507466,
+   "nome": "Sao Joao da Ponta"
+ },
+ {
+   "codigo": 1507474,
+   "nome": "Sao Joao de Pirabas"
+ },
+ {
+   "codigo": 1507508,
+   "nome": "Sao Joao do Araguaia"
+ },
+ {
+   "codigo": 1507607,
+   "nome": "Sao Miguel do Guama"
+ },
+ {
+   "codigo": 1507706,
+   "nome": "Sao Sebastiao da Boa Vista"
+ },
+ {
+   "codigo": 1507755,
+   "nome": "Sapucaia"
+ },
+ {
+   "codigo": 1507805,
+   "nome": "Senador Jose Porfirio"
+ },
+ {
+   "codigo": 1507904,
+   "nome": "Soure"
+ },
+ {
+   "codigo": 1507953,
+   "nome": "Tailandia"
+ },
+ {
+   "codigo": 1507961,
+   "nome": "Terra Alta"
+ },
+ {
+   "codigo": 1507979,
+   "nome": "Terra Santa"
+ },
+ {
+   "codigo": 1508001,
+   "nome": "Tome-Acu"
+ },
+ {
+   "codigo": 1508035,
+   "nome": "Tracuateua"
+ },
+ {
+   "codigo": 1508050,
+   "nome": "Trairao"
+ },
+ {
+   "codigo": 1508084,
+   "nome": "Tucuma"
+ },
+ {
+   "codigo": 1508100,
+   "nome": "Tucurui"
+ },
+ {
+   "codigo": 1508126,
+   "nome": "Ulianopolis"
+ },
+ {
+   "codigo": 1508159,
+   "nome": "Uruara"
+ },
+ {
+   "codigo": 1508209,
+   "nome": "Vigia"
+ },
+ {
+   "codigo": 1508308,
+   "nome": "Viseu"
+ },
+ {
+   "codigo": 1508357,
+   "nome": "Vitoria do Xingu"
+ },
+ {
+   "codigo": 1508407,
+   "nome": "Xinguara"
+ }
+];

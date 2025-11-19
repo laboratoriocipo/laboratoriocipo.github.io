@@ -247,8 +247,25 @@
         // Função para filtrar municípios por nome
         const anoAtual = new Date().getFullYear();
         document.getElementById("ano").textContent = anoAtual;
-        let cidaddes = ``;
+        const cidades_grade = document.getElementById('municipalities-container');
+        let cidades = ``;
+        for (let cidade of window.Nomes){
 
+        cidades += `
+        <div class="municipality-card" data-name="${cidade.nome}">
+            <img src="fotos_otimizadas/${cidade.codigo}.webp" alt="${cidade.nome}" class="municipality-image">
+            <div class="municipality-info">
+                <h3 class="municipality-name">${cidade.nome}</h3>
+                <a href="relatorio.php?id=${cidade.codigo}" class="view-report-btn">Visualizar Relatório</a>
+            </div>
+        </div>
+
+
+        `;
+
+
+        }
+        cidades_grade.innerHTML = cidades;
 
 
 
