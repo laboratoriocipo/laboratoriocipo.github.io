@@ -325,7 +325,7 @@
 
             <div class="stat-card total-desflorestamento">
                 <div class="stat-label">Área Desflorestada</div>
-                <div class="stat-value"><?php echo number_format($total_desflorestamento, 2, ',', '.'); ?> km²</div>
+                <div class="stat-value" id="desflorestamento-acumulado"> km²</div>
                 <div class="stat-desc">Total acumulado</div>
             </div>
 
@@ -354,16 +354,8 @@
                     <th>Desflorestamento Acumulado (km²)</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php foreach ($dados_anuais as $ano => $dados): ?>
-                <tr>
-                    <td><?php echo $ano; ?></td>
-                    <td>R$ <?php echo number_format($dados['repasse_anual'], 2, ',', '.'); ?></td>
-                    <td><?php echo number_format($dados['desflorestamento_anual'], 2, ',', '.'); ?></td>
-                    <td>R$ <?php echo number_format($dados['repasse_acumulado'], 2, ',', '.'); ?></td>
-                    <td><?php echo number_format($dados['desflorestamento_acumulado'], 2, ',', '.'); ?></td>
-                </tr>
-                <?php endforeach; ?>
+            <tbody id="dados-tabelados">
+
             </tbody>
         </table>
 
@@ -398,6 +390,19 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+
+
+
+let mudar = `
+    <tr>
+        <td><?php echo $ano; ?></td>
+        <td>R$ <?php echo number_format($dados['repasse_anual'], 2, ',', '.'); ?></td>
+        <td><?php echo number_format($dados['desflorestamento_anual'], 2, ',', '.'); ?></td>
+        <td>R$ <?php echo number_format($dados['repasse_acumulado'], 2, ',', '.'); ?></td>
+        <td><?php echo number_format($dados['desflorestamento_acumulado'], 2, ',', '.'); ?></td>
+    </tr>
+
+`;
 
 
 
@@ -522,7 +527,7 @@ new Chart(evolucaoCtx, {
     }
 });
 
-// Gráfico 2: Correlação entre Variáveis (Scatter Plot)
+
 const correlacaoCtx = document.getElementById('correlacaoChart').getContext('2d');
 new Chart(correlacaoCtx, {
     type: 'scatter',
