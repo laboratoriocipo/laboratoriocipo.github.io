@@ -1,0 +1,16 @@
+services:
+  php-apache:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./database:/var/www/database
+    environment:
+      - APACHE_RUN_USER=#1000
+    networks:
+      - php-network
+
+networks:
+  php-network:
+    driver: bridge

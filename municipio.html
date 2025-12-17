@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Município</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dados.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header-hero">
+            <img id="municipio-imagem" src="" alt="" class="header-image">
+            <div class="header-content">
+                <h1 id="municipio-nome" class="municipality-name">Carregando...</h1>
+                <div id="municipio-estado" class="municipality-state">Pará</div>
+            </div>
+        </header>
+
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Voltar para a lista de municípios
+            </a>
+
+            <!-- Estatísticas Principais -->
+            <div class="stats-grid-2x2">
+                <div class="stat-card total-repasse">
+                    <div class="stat-label">Total de Repasses (ICMS Verde)</div>
+                    <div id="total-repasse" class="stat-value">Carregando...</div>
+                    <div class="stat-desc">Valor acumulado</div>
+                </div>
+
+                <div class="stat-card total-desflorestamento">
+                    <div class="stat-label">Área Desflorestada</div>
+                    <div id="total-desflorestamento" class="stat-value">Carregando...</div>
+                    <div class="stat-desc">Total acumulado</div>
+                </div>
+
+                <div class="stat-card correlacao-pearson">
+                    <div class="stat-label">Correlação de Pearson</div>
+                    <div id="correlacao-pearson" class="stat-value">Carregando...</div>
+                    <div class="stat-desc">Relação linear</div>
+                </div>
+
+                <div class="stat-card correlacao-spearman">
+                    <div class="stat-label">Correlação de Spearman</div>
+                    <div id="correlacao-spearman" class="stat-value">Carregando...</div>
+                    <div class="stat-desc">Relação monotônica</div>
+                </div>
+            </div>
+
+            <!-- Tabela de Dados Anuais -->
+            <h2 class="section-title">Dados Anuais Detalhados</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Repasse ICMS Verde (R$)</th>
+                        <th>Desflorestamento (km²)</th>
+                        <th>Repasse Acumulado (R$)</th>
+                        <th>Desflorestamento Acumulado (km²)</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-dados">
+                    <!-- Dados serão inseridos aqui via JavaScript -->
+                </tbody>
+            </table>
+
+            <!-- Gráficos -->
+            <h2 class="section-title">Visualizações e Análises</h2>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3 class="chart-title">Evolução dos Repasses vs Desflorestamento</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="evolucaoChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Correlação entre Variáveis</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="correlacaoChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Distribuição Temporal</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="distribuicaoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Análise -->
+            <div class="analysis-section">
+                <h2 class="section-title">Análise Estatística</h2>
+                <div id="analise-texto" class="analysis-text">
+                    <!-- Análise será inserida aqui -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Sistema de Monitoramento - ICMS Verde Pará &copy; quietbyte <span id="ano-atual">Carregando</span></p>
+        </footer>
+    </div>
+
+    <script src="municipio.js"></script>
+</body>
+</html>
